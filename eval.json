@@ -1,0 +1,8 @@
+[
+ {"question": "What does R-squared measure?", "keyword": "proportion of variance"},
+ {"question": "Which library does efficient similarity search over vectors?", "keyword": "FAISS"},
+ {"question": "How does RAG ground answers?", "keyword": "relevant document chunks"},
+ {"question": "What does MLflow log for each run?", "keyword": "parameters, metrics"},
+ {"question": "Why use a random forest instead of one tree?", "keyword": "reduces variance"},
+ {"question": "Which metrics evaluate object detection?", "keyword": "mAP"}
+]

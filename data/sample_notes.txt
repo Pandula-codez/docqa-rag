@@ -1,0 +1,11 @@
+Random Forest Regression combines many decision trees trained on bootstrap samples and averages their predictions, which reduces variance and overfitting compared to a single tree.
+
+R-squared measures the proportion of variance in the target explained by the model. Mean Absolute Error (MAE) is the average absolute difference between predictions and true values and is expressed in the target's units.
+
+FAISS is a library for efficient similarity search over dense vectors. Chroma and Milvus are vector databases that store embeddings with metadata for retrieval.
+
+Retrieval Augmented Generation (RAG) retrieves relevant document chunks and passes them to a large language model as context so answers are grounded in the source documents.
+
+MLflow tracks experiments by logging parameters, metrics and artifacts for each run so results can be compared and reproduced.
+
+YOLO is a single-stage object detector. mAP, precision and recall are the standard metrics to evaluate detection quality.
