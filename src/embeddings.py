@@ -1,8 +1,8 @@
 """Embedding backends.
 
-"hf"   : sentence-transformers model (default, needs a one-time model download).
-"hash" : tiny deterministic bag-of-words hashing embeddings. No download, used
-         for fast offline tests; retrieval quality is lower than "hf".
+"hash" : deterministic bag-of-words hashing embeddings. No model download;
+         retrieval quality is lower than "hf".
+"hf"   : sentence-transformers model (requires optional packages and download).
 """
 import hashlib
 import re
@@ -32,7 +32,7 @@ class HashEmbeddings(Embeddings):
         return self._embed(text)
 
 
-def get_embeddings(kind: str = "hf") -> Embeddings:
+def get_embeddings(kind: str = "hash") -> Embeddings:
     if kind == "hash":
         return HashEmbeddings()
     from langchain_huggingface import HuggingFaceEmbeddings

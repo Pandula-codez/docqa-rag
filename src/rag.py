@@ -41,8 +41,12 @@ def answer(store, question, k=4):
     import anthropic
 
     client = anthropic.Anthropic()
-    msg = client.messages.create(
-        model=MODEL, max_tokens=600,
-        messages=[{"role": "user",
-                   "content": PROMPT.format(context=context, question=question)}])
+    try:
+        msg = client.messages.create(
+            model=MODEL, max_tokens=600,
+            messages=[{"role": "user",
+                       "content": PROMPT.format(context=context, question=question)}])
+    except anthropic.APIError as exc:
+        return (f"(Anthropic API request failed: {exc}. "
+                "Showing the retrieved passages only.)\n\n" + context), docs
     return msg.content[0].text, docs

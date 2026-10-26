@@ -46,7 +46,7 @@ if __name__ == "__main__":
     ap.add_argument("--chunk-sizes", type=int, nargs="+", default=[400, 800, 1200])
     ap.add_argument("--chunk-overlap", type=int, default=100)
     ap.add_argument("--k", type=int, default=4)
-    ap.add_argument("--embedding", default="hf", choices=["hf", "hash"])
+    ap.add_argument("--embedding", default="hash", choices=["hf", "hash"])
     ap.add_argument("--experiment", default="docqa-rag")
     a = ap.parse_args()
     for cs in a.chunk_sizes:

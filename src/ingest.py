@@ -20,7 +20,7 @@ def load_documents(data_dir: str):
 
 
 def build_index(data_dir="data", index_dir="index", chunk_size=800,
-                chunk_overlap=100, embedding="hf"):
+                chunk_overlap=100, embedding="hash"):
     docs = load_documents(data_dir)
     if not docs:
         raise SystemExit(f"No .pdf/.txt/.md files found in '{data_dir}'.")
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     ap.add_argument("--index", default="index")
     ap.add_argument("--chunk-size", type=int, default=800)
     ap.add_argument("--chunk-overlap", type=int, default=100)
-    ap.add_argument("--embedding", default="hf", choices=["hf", "hash"])
+    ap.add_argument("--embedding", default="hash", choices=["hf", "hash"])
     a = ap.parse_args()
     _, n_docs, n_chunks = build_index(a.data, a.index, a.chunk_size,
                                       a.chunk_overlap, a.embedding)
